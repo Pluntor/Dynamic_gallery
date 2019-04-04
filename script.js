@@ -17,7 +17,7 @@ btnForLoop.addEventListener("click", function () {
   for (let i = 0; i < images.length; i++) {
 
     if (images[i].naturalWidth > 100 || images[i].naturalHeight > 100) {
-      images[i].style.height = "15%";
+      images[i].style.width = "15%";
     }
 
     let maxTopPosition = modal.clientHeight - images[i].height;
