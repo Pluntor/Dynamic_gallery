@@ -5,8 +5,10 @@ let wrap = document.querySelector(".wrap");
 let btnForLoop = document.querySelector("button");
 let images = document.querySelectorAll("img");
 
+//ustawienie nasłuchu na kliknięcie w przycisk
 btnForLoop.addEventListener("click", function () {
 
+  // dodanie klasy active do modala i aktywacja blur na tle
   modalWrap.classList.add("active");
   wrap.classList.add("blur");
 
@@ -14,12 +16,8 @@ btnForLoop.addEventListener("click", function () {
 
   for (let i = 0; i < images.length; i++) {
 
-    // dodanie klasy active do modala i aktywacja blur na tle
-
-
-    if (images[i].naturalWidth > 200 || images[i].naturalHeight > 200) {
-      images[i].style.width = ((images[i].naturalWidth) / 6) + "px";
-      images[i].style.height = ((images[i].naturalHeight) / 6) + "px";
+    if (images[i].naturalWidth > 100 || images[i].naturalHeight > 100) {
+      images[i].style.height = "15%";
     }
 
     let maxTopPosition = modal.clientHeight - images[i].height;
@@ -30,11 +28,9 @@ btnForLoop.addEventListener("click", function () {
     images[i].style.top = (maxTopPosition - randomHeightNumber) + "px";
     images[i].style.left = (maxLeftPosition - randomWidthNumber) + "px";
   }
-
-})
+});
 
 // pobranie div.close, zamknięcie modala i usunięcie klasy active oraz blur
-
 let divClose = document.querySelector(".close");
 
 divClose.addEventListener("click", function () {

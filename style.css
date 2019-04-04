@@ -58,6 +58,8 @@
   top: 0;
   left: 0;
   transition: .4s linear;
+  object-fit: cover;
+  object-position: center;
   cursor: pointer;
 }
 
