@@ -22,12 +22,20 @@ btnForLoop.addEventListener("click", function () {
 
     let maxTopPosition = modal.clientHeight - images[i].height;
     let maxLeftPosition = modal.clientWidth - images[i].width;
-    let randomHeightNumber = (Math.floor(Math.random() * maxTopPosition)) + 1;
-    let randomWidthNumber = (Math.floor(Math.random() * maxLeftPosition)) + 1;
+    let randomHeightNumber = (Math.floor(Math.random() * maxTopPosition)) + 1; //losowanie przestrzeni od góry
+    let randomWidthNumber = (Math.floor(Math.random() * maxLeftPosition)) + 1; //losowanie przestrzeni od lewej
+    let randomTopPosition = ((maxTopPosition - randomHeightNumber) / modal.clientHeight) * 100;
+    let randomLeftPosition = ((maxLeftPosition - randomWidthNumber) / modal.clientWidth) * 100;
 
-    images[i].style.top = (maxTopPosition - randomHeightNumber) + "px";
-    images[i].style.left = (maxLeftPosition - randomWidthNumber) + "px";
+    images[i].style.top = (randomTopPosition) + "%";
+    images[i].style.left = (randomLeftPosition) + "%";
+
+    window.addEventListener("resize", function () {
+      console.log(modal.clientHeight + " " + modal.clientWidth);
+    });
   }
+
+
 });
 
 // pobranie div.close, zamknięcie modala i usunięcie klasy active oraz blur
