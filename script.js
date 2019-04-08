@@ -31,10 +31,10 @@ btnForLoop.addEventListener("click", function () {
     images[i].style.left = (randomLeftPosition) + "%";
 
     window.addEventListener("resize", function () {
-      console.log(modal.clientHeight + " " + modal.clientWidth);
+      images[i].style.top = (randomTopPosition) + "%";
+      images[i].style.left = (randomLeftPosition) + "%";
     });
   }
-
 
 });
 
